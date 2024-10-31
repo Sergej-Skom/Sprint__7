@@ -8,11 +8,9 @@ public class ApiConfiguration {
     protected RequestSpecification requestSpecification;
 
     @Before
-    public void setupRequestSpecification()
-    {
+    public void setupRequestSpecification() {
         requestSpecification = RestAssured.given()
-                .baseUri("http://qa-scooter.praktikum-services.ru/")
-                .basePath("/api/v1")
+                .baseUri(ApiEndpoints.BASE_URL)  // Используем константу BASE_URL
                 .header("Content-type", "application/json");
     }
 }
